@@ -13,7 +13,7 @@
             Console.WriteLine();
             foreach (t item in values)
             {
-                Console.Write(item);
+                Console.Write($"{item} ,");
             }
             Console.WriteLine();
 
@@ -36,11 +36,22 @@
 
             PrintArray(numbers);
 
-            SortingAlgorthims.BlubleSort(numbers,Sortingconditions.CompareLess);
+            SortingAlgorthims.BlubleSort(numbers, Sortingconditions.CompareGtr);
 
             PrintArray(numbers);
 
 
+            #endregion
+
+
+            #region Video 4
+
+            string[] Names = { "omar", "ahmed", "mona", "hany", "mohamed", "randa" };
+
+            PrintArray(Names);
+
+            SortingAlgorthims.BlubleSort(Names, Sortingconditions.CompareLess);
+            PrintArray(Names);
             #endregion
 
         }
