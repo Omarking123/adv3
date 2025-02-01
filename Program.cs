@@ -3,7 +3,7 @@
     public delegate int StringFuncDelegate(string S);
 
 
-    public delegate bool ConditionFuncDelegate(int A);
+    public delegate bool ConditionFuncDelegate<t>(t A);
     internal class Program
 
     {
@@ -71,9 +71,9 @@
         //}
 
         
-        public static List<int> FindOddNumbers(List<int> list , ConditionFuncDelegate reference)
+        public static List<t> FindOddNumbers<t>(List<t> list , ConditionFuncDelegate<t> reference)
         {
-            List<int> result = new List<int>();
+            List<t> result = new List<t>();
             if (list?.Count > 0)
             {
                 for (int i = 0; 1 < list.Count; i++)
@@ -172,6 +172,14 @@
             List<int> OddNumbers = FindOddNumbers(Numbers,ConditionsFucntion.Checkby4);
             
             PrintList(OddNumbers);
+            #endregion
+
+            #region Video 6
+
+            List<string> Namess = new List<String>() { "omar", "ahmed", "mona", "hany", "mohamed", "randa" };
+
+
+            
             #endregion
         }
     }
