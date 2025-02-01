@@ -196,6 +196,16 @@
 
 
             #endregion
+
+            #region video8
+
+
+            //List<int> Numberss = new List<int>() { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+            //Func<int, bool> func1 = delegate (int X) { return X % 2 == 0; };
+            
+            //FindOddNumbers(Numberss, func1);
+            //FindOddNumbers(Numberss, n => n % 2 != 0);
+            #endregion
         }
         public static void print()
         {
