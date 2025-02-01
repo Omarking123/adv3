@@ -169,8 +169,8 @@
             #region video 5
 
             List<int> Numbers = Enumerable.Range(1, 100).ToList();
-            List<int> OddNumbers = FindOddNumbers(Numbers,ConditionsFucntion.Checkby4);
-            
+            List<int> OddNumbers = FindOddNumbers(Numbers, ConditionsFucntion.Checkby4);
+
             PrintList(OddNumbers);
             #endregion
 
@@ -179,8 +179,36 @@
             List<string> Namess = new List<String>() { "omar", "ahmed", "mona", "hany", "mohamed", "randa" };
 
 
-            
+
+            #endregion
+
+            #region Video 7
+
+            //Predicate<int> predicate = ConditionsFucntion.CheckEven;
+
+            //bool r = predicate.Invoke(1);
+            //Console.WriteLine(r);
+
+            Func<int> func = Func01;
+            Func<int, string> Func1 = Func02;
+
+            Action action = print;
+
+
             #endregion
         }
+        public static void print()
+        {
+            Console.WriteLine("hello ");
+        }
+        public static int Func01()
+        {
+            return 1;
+        }
+        public  static string Func02(int x)
+        {
+            return $"{x}"; 
+        }
     }
+
 }
