@@ -3,7 +3,7 @@
     public delegate int StringFuncDelegate(string S);
 
 
-  
+    public delegate bool ConditionFuncDelegate(int A);
     internal class Program
 
     {
@@ -17,6 +17,118 @@
             }
             Console.WriteLine();
 
+        }
+
+        //public static List<int> FindOddNumbers (List<int> list)
+        //{
+        //    List<int> result = new List<int>();
+        //    if(list?.Count > 0)
+        //    {
+        //        for(int i = 0; 1 < list.Count; i++)
+        //        {
+        //            if (list[i]%2 != 0)
+        //            {
+        //                result.Add(list[i]);
+        //            }
+
+        //        }
+        //    }
+        //    return result;
+        //}
+
+        //public static List<int> FindevenNumbers(List<int> list)
+        //{
+        //    List<int> result = new List<int>();
+        //    if (list?.Count > 0)
+        //    {
+        //        for (int i = 0; 1 < list.Count; i++)
+        //        {
+        //            if (list[i] % 2 == 0)
+        //            {
+        //                result.Add(list[i]);
+        //            }
+
+        //        }
+        //    }
+        //    return result;
+        //}
+
+        //public static List<int> Findby4Numbers(List<int> list)
+        //{
+        //    List<int> result = new List<int>();
+        //    if (list?.Count > 0)
+        //    {
+        //        for (int i = 0; 1 < list.Count; i++)
+        //        {
+        //            if (list[i] % 4 == 0)
+        //            {
+        //                result.Add(list[i]);
+        //            }
+
+        //        }
+        //    }
+        //    return result;
+        //}
+
+        
+        public static List<int> FindOddNumbers(List<int> list , ConditionFuncDelegate reference)
+        {
+            List<int> result = new List<int>();
+            if (list?.Count > 0)
+            {
+                for (int i = 0; 1 < list.Count; i++)
+                {
+                    if (reference.Invoke(list[i]))
+                    {
+                        result.Add(list[i]);
+                    }
+
+                }
+            }
+            return result;
+        }
+
+        //public static List<int> FindevenNumbers(List<int> list)
+        //{
+        //    List<int> result = new List<int>();
+        //    if (list?.Count > 0)
+        //    {
+        //        for (int i = 0; 1 < list.Count; i++)
+        //        {
+        //            if (ConditionsFucntion.CheckEven(list[i]))
+        //            {
+        //                result.Add(list[i]);
+        //            }
+
+        //        }
+        //    }
+        //    return result;
+        //}
+
+        //public static List<int> Findby4Numbers(List<int> list)
+        //{
+        //    List<int> result = new List<int>();
+        //    if (list?.Count > 0)
+        //    {
+        //        for (int i = 0; 1 < list.Count; i++)
+        //        {
+        //            if (ConditionsFucntion.Checkby4(list[i]))
+        //            {
+        //                result.Add(list[i]);
+        //            }
+
+        //        }
+        //    }
+        //    return result;
+        //}
+        public   static  void PrintList<t>(List<t> values)
+        {
+            Console.WriteLine();
+            foreach(t item in values)
+            {
+                Console.Write(item);
+            }
+            Console.WriteLine();
         }
         static void Main(string[] args)
         {
@@ -54,6 +166,13 @@
             PrintArray(Names);
             #endregion
 
+            #region video 5
+
+            List<int> Numbers = Enumerable.Range(1, 100).ToList();
+            List<int> OddNumbers = FindOddNumbers(Numbers,ConditionsFucntion.Checkby4);
+            
+            PrintList(OddNumbers);
+            #endregion
         }
     }
 }
