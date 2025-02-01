@@ -211,19 +211,33 @@
             //var X = "hello";
             //var predicate = ConditionsFucntion.CheckEven;
             #endregion
+            #region video9
+            
+            #endregion
         }
-        public static void print()
+
+
+        public static Action Fun013()
         {
-            Console.WriteLine("hello ");
+            //Action action = () => Console.WriteLine("hello word")
+            Action action = printt;
         }
-        public static int Func01()
+        public  static void printt()
         {
-            return 1;
+            Console.WriteLine("hello");
         }
-        public  static string Func02(int x)
-        {
-            return $"{x}"; 
-        }
+        //public static void print()
+        //{
+        //    Console.WriteLine("hello ");
+        //}
+        //public static int Func01()
+        //{
+        //    return 1;
+        //}
+        //public  static string Func02(int x)
+        //{
+        //    return $"{x}"; 
+        //}
     }
 
 }
